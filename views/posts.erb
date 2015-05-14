@@ -1,0 +1,40 @@
+<title>Posts for @ <%= @thread.name %></title>
+<div>Posts for "<span class="bold-large"><%= @thread.name %></span>"</div>
+<div><br><a href="/user/<%= session[:uid] %>">My Threads and Posts</a><br><a href="/userlist">User List</a><br></div>
+<div><a href="/threads"><button>Threads</button></a></div> <br>
+
+<div>
+  <br>
+  <form method="post" action="/thread/<%= @thread.id %>/create_post" class="form-inline">
+    <div class="form-group">
+      <input type="text" name="title" placeholder="Post Title" class="form-control">
+    </div> <br> <br>
+    <div>
+      <input type="text" name="content" placeholder="Post Content" class="form-control">
+    </div> <br> <br>
+    <div class="form-group">
+      <input type="submit" value="Create" class="form-control btn btn-success">
+    </div> <br><br>
+  </form>
+</div>
+
+<div class="left">
+  <% @posts.each do |post| %>
+      <div>
+        <div><button class="btn btn-primary"><%= post.title %></button>
+          <a class=" btn btn-warning edit-btn" href="/post/<%= post.id %>/edit">✎</a>
+          <a class="btn btn-danger delete-btn" href="/post/<%= post.id %>/delete">X</a></div>
+        <div><label>Created by <%= post.user.username %> @ <%= post.time %></label></div>
+
+
+        <div class="margin"><%= post.content %></div> <br>
+
+      </div>
+  <% end %>
+</div>
+
+<div><%= session[:message] %></div>
+
+
+<div><a href="/login"><button class="sign_out">Sign Out</button></a></div> <br>
+

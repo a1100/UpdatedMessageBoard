@@ -1,0 +1,15 @@
+<div class="form-group">Edit <span class="bold"><%= @p.title %> </span> </div>
+
+<form method="post" action="/post/<%= @p.id %>/update" class="form-inline">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text"  value="<%= @p.title %>"name="name" class="form-control">
+  </div>
+  <label for="content">Content</label>
+  <input type="text" value="<%= @p.content %>"name="content" class="form-control">
+  <div class="form-group">
+    <input type="submit" value="Update Post" class="form-control btn-primary">
+  </div>
+</form>
+
+<a class="btn btn-danger" href="/thread/<%= @p.topic_id %>/posts">CANCEL</a>

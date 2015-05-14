@@ -1,0 +1,11 @@
+<div class="form-group">Edit <span class="bold"><%= @t.name %> </span> </div>
+<form method="post" action="/thread/<%= @t.id %>/update" class="form-inline">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text"  value="<%= @t.name %>"name="name" class="form-control">
+  </div>
+  <div class="form-group">
+    <input type="submit" value="Update Thread" class="form-control btn-primary">
+    <a class="btn btn-danger" href="/threads">CANCEL</a>
+  </div>
+</form>

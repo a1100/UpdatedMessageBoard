@@ -1,0 +1,26 @@
+<title>Sign Up</title>
+
+
+<header>Sign Up</header> <br>
+
+<form method="post" action="/create_user" class="form-inline">
+  <div class="form-group">
+    <input type="text" placeholder="Username"name="username" class="form-control">
+  </div> <br> <br>
+  <div class="form-group">
+    <input type="text" placeholder="First Name" name="first" class="form-control">
+  </div> <br> <br>
+  <div class="form-group">
+    <input type="password" placeholder="Password" name="password" class="form-control">
+  </div> <br> <br>
+  <div class="form-group">
+    <input type="password" placeholder="Confirm Password" name="confirm" class="form-control">
+  </div> <br> <br>
+  <div class="form-group">
+    <input type="submit" value="Sign Up" class="form-control btn btn-success">
+  </div>
+</form>
+
+<div>Returning user? <a href="/login">Sign in here.</a></div>
+
+<br> <div class="error"><%= @message %></div>

@@ -1,0 +1,22 @@
+<% user = User.where(:id => params[:uid]).first %>
+<div><%= user.username %>'s Posts</div> <br>
+
+<% user.posts.each do |post| %>
+    <label style="background-color: lightblue;">
+    <div style="font-size: 20px;"><%= post.title %></div>
+    <div><%= post.content %></div>
+    </label>
+<% end %>
+
+<br>
+
+<div><%= user.username %>'s Threads</div> <br>
+<% user.topics.each do |thread| %>
+    <div><a href=/thread/<%= thread.id %>/posts><%= thread.name %></div>
+<% end %>
+
+<div class="sign_out"><a href="/leave"><button class="form-control btn-primary" style="margin-top: -110%;">Sign Out</button></a></div>
+<div>
+  <div><br><a href="/user/<%= session[:uid] %>">My Threads and Posts</a><br><a href="/userlist">User List</a><br></div>
+
+</div>

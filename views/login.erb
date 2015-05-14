@@ -1,0 +1,27 @@
+<body>
+
+<title>Login</title>
+<br>
+
+<header>Programming Help Forum</header> <br>
+<form method="post" action="/check_user" class="form-inline">
+  <div class="form-group">
+    <input type="text" name="username" placeholder="Username" class="form-control">
+  </div> <br> <br>
+  <div class="form-group">
+    <input type="password" name="password" placeholder="Password"class="form-control">
+  </div> <br><br>
+  <div class="form-group">
+    <input type="submit" value="Sign In" class="form-control btn btn-primary">
+  </div> <br><br>
+
+  <div class="error"><%= @message %></div>
+
+
+</form>
+
+
+
+<div>New user? <a href="/signup">Sign up here.</a></div>
+
+</body>

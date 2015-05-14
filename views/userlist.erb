@@ -1,0 +1,13 @@
+<div>Registered Users</div>
+<div style="font-style: oblique;">Click on a user to view all of their threads and posts.</div>
+<div><a href="/threads">Threads</a></div>
+<div><a href="/login"><button class="sign_out">Sign Out</button></a></div> <br>
+<div><br><a href="/user/<%= session[:uid] %>">My Threads and Posts</a><br></div>
+
+<% user_array = User.all %>
+<ul>
+<% user_array.each do |user| %>
+<li style="text-align: left"><a href="/user/<%= user.id %>"><%= user.username %></li>
+<% end %>
+
+</ul>
